@@ -1,7 +1,7 @@
 {
   "name": "px2bitfontmaker2",
   "version": "1.0.0",
-  "description": "Read in sprites to generate json for bitfontmaker2",
+  "description": "Read in spritesheet to generate json for bitfontmaker2",
   "main": "index.js",
   "keywords": [
     "pixel"
@@ -9,6 +9,6 @@
   "author": "sprngr",
   "license": "MIT",
   "dependencies": {
-    "get-pixels": "^3.3.0"
+    "pixel-getter": "0.0.5"
   }
 }
