@@ -7,7 +7,7 @@ const glyphMapLayout = [
 ];
 const glyphSize = 16;
 
-let output = require('./bitfontmaker2.json');
+let outputJSON = require('./templates/bitfontmaker2.json');
 
 // Import image, get pixels
 let glyphPixels;
@@ -94,5 +94,5 @@ function processPixels() {
         }
     });
 
-    console.log(JSON.stringify(output));
+    console.log(JSON.stringify(outputJSON));
 }
