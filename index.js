@@ -1,4 +1,4 @@
-const getPixels = require("pixel-getter").get;
+const Jimp = require('jimp');
 
 const bitMaskMap = [1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768];
 const glyphMapLayout = [
@@ -7,7 +7,7 @@ const glyphMapLayout = [
 ];
 const glyphSize = 16;
 
-let output = require("./bitfontmaker2.json");
+let output = require('./bitfontmaker2.json');
 
 // Import image, get pixels
 let glyphPixels;
@@ -17,15 +17,48 @@ let glyphMapDimensions = {
 }
 let glyphMapOutput = {};
 
-getPixels("glyph/template.png", function(err, pixels) {
-    if(err) {
-        console.log(err);
-        return;
-    }
+Jimp.read('./templates/template.png')
+    .then((image) => {
+        let height = image.bitmap.height;
+        let width = image.bitmap.width;
 
-    glyphPixels = pixels[0];
-    processPixels();
-});
+        // Check width
+        if (width != glyphMapDimensions.width) {
+            console.error('Image must be 208 pixels wide (13 16x16 glyphs across)');
+            return;
+        }
+
+        // Check height (could be more or less)
+        if (height % glyphSize !== 0) {
+            console.error('Glyph heights must be a power of 16 (128, 256, etc)');
+            return;
+        } else if (height !== glyphMapDimensions.height) {
+            glyphMapDimensions.height = height;
+        }
+
+        glyphPixels = getPixelsFromBuffer(image.bitmap.data);
+
+        processPixels();
+    })
+    .catch(function (err) {
+        console.error(err)
+        return;
+    });
+
+function getPixelsFromBuffer(buffer) {
+    let pixelData = [...buffer];
+    let results = [];
+
+    for (let i=0; i<pixelData.length; i+=4) {
+      results.push({
+          r: pixelData[i+0],
+          g: pixelData[i+1],
+          b: pixelData[i+2],
+          a: pixelData[i+3]
+      })
+    }
+    return results;
+}
 
 function processPixels() {
     let outerIndex = {x:-1, y: 0};
@@ -61,5 +94,5 @@ function processPixels() {
         }
     });
 
-    console.log(JSON.parse(output));
+    console.log(JSON.stringify(output));
 }

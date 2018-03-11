@@ -9,6 +9,6 @@
   "author": "sprngr",
   "license": "MIT",
   "dependencies": {
-    "pixel-getter": "0.0.5"
+    "jimp": "^0.2.28"
   }
 }
