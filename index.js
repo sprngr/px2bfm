@@ -90,7 +90,7 @@ function processPixels() {
         if (outerIndex.y == 2) return true;
 
         if (pixel.r == 0 && pixel.g == 0 && pixel.b == 0) {
-            output[glyphMapLayout[outerIndex.y][outerIndex.x]][innerIndex.y] += bitMaskMap[innerIndex.x];
+            outputJSON[glyphMapLayout[outerIndex.y][outerIndex.x]][innerIndex.y] += bitMaskMap[innerIndex.x];
         }
     });
 
