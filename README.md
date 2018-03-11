@@ -68,7 +68,7 @@ To put it on the clipboard to paste into the textfield on the web app:
 
 **MacOS**
 ```shell
-$ pxbfm yourFileHere.png | pbcopy
+$ px2bfm yourFileHere.png | pbcopy
 ```
 
 **Windows**
@@ -80,7 +80,7 @@ $ px2bfm yourFileHere.png | clip
 **Linux**
 ```shell
 # Let's be honest, if you're on linux you're a pro at this so why do I need to tell you
-$ pxbfm yourFileHere.png | xclip
+$ px2bfm yourFileHere.png | xclip
 ```
 
 ## Important Notes
