@@ -23,7 +23,7 @@ program
 
 if (!program.args.length) program.help();
 
-Promise.all([px2bfm(fileValue, program.fontname, program.creator)])
+Promise.resolve(px2bfm(fileValue, program.fontname, program.creator))
     .then((output) => {
         console.log(output);
     });
