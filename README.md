@@ -19,11 +19,32 @@ $ npm install --global px2bfm
 ```
 
 # Usage
+```shell
+$ px2bfm
+
+  Usage: px2bfm [options] <file>
+
+  Parse pixels to BitFontMaker2 JSON font format
+  For more info visit https://github.com/sprngr/px2bfm
+
+  Options:
+
+    -v, --version              output the version number
+    -f, --fontname <fontname>  add name of the font
+    -c, --creator <creator>    add name of the font creator
+    -h, --help                 output usage information
+```
+
+Example:
+```shell
+$ px2bfm yourFileHere.png
+{A lot of JSON}
+```
+
 Using one of the font templates provided (or your own, as long as it fits within required dimensions), create a pixel font.
 
-From the command line, run `px2bfm` and follow the prompts to generate your JSON.
-
-Sprite sheets must have a width of 208px to maintain some parity with the layout of BitFontMaker2. The height of the file must be a power of 16 (default is 128px), this will allow for future support of extended character sets.
+Sprite sheets must have a width of 208px to maintain some parity with the layout of BitFontMaker2.
+The height of the file must be a power of 16 (default is 128px), this will allow for future support of extended character sets.
 
 Be sure to use black (hex #000000 / rgba 255, 255, 255, 255) for glyph pixels, the image parser only cares about those. Any other colors are ignored.
 
@@ -49,7 +70,7 @@ $%&'()*+,-./:
 Extended character support is planned for the future, as well as the additional 90 character slots allowed.
 
 # Templates & Downloads
-> Font template includes guides. The blue dotted line creates the grid of 16x16 blocks, the red lines are the baseline like in the web app.
+Font template includes guides. The blue dotted line creates the grid of 16x16 blocks, the red lines are the baseline like in the web app.
 
 <img src="templates/template.png"/>
 
