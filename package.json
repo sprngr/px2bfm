@@ -1,7 +1,7 @@
 {
   "name": "px2bfm",
   "version": "1.0.0",
-  "description": "Parse pixels to BitFontMaker2 font json format",
+  "description": "Parse pixels to BitFontMaker2 JSON font format",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sprngr/px2bitfontmaker2.git"

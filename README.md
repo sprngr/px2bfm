@@ -3,7 +3,7 @@
 </h1>
 # WIP
 
-> Parse pixels to [BitFontMaker2](http://www.pentacom.jp/pentacom/bitfontmaker2/) font JSON format
+> Parse pixels to [BitFontMaker2](http://www.pentacom.jp/pentacom/bitfontmaker2/) JSON font format
 
 ![From Pittsburgh With Love](https://img.shields.io/badge/from%20pittsburgh%20with-%E2%9D%A4-yellow.svg?style=for-the-badge)
 
@@ -49,15 +49,13 @@ $%&'()*+,-./:
 Extended character support is planned for the future, as well as the additional 90 character slots allowed.
 
 # Templates & Downloads
-> Font Template includes guides
-
-* [.ase (Aseprite) format](https://github.com/sprngr/px2bfm/blob/master/templates/template.ase?raw=true)
-* [.png format](https://github.com/sprngr/px2bfm/blob/master/templates/template.png?raw=true)
-
-The blue dotted line creates the grid of 16x16 blocks, the red aligns with the red
-baseline in the web app.
+> Font template includes guides. The blue dotted line creates the grid of 16x16 blocks, the red lines are the baseline like in the web app.
 
 <img src="templates/template.png"/>
+
+## Downloads
+* [.ase (Aseprite) format](https://github.com/sprngr/px2bfm/blob/master/templates/template.ase?raw=true)
+* [.png format](https://github.com/sprngr/px2bfm/blob/master/templates/template.png?raw=true)
 
 # License
 MIT &copy; [Michael Springer](https://github.com/sprngr) 2018
