@@ -31,7 +31,7 @@ Each glyph must fit within a 16x16 pixel block, this is required by the web app.
 
 ## Example px2bfm compatible sprite sheet
 
-<img src="templates/test.png" width="416" style="image-rendering:pixelated;"/>
+<img src="templates/test.png"/>
 
 # Character Support
 Currently this supports the first set of 104 characters on BitFontMaker2:
@@ -49,15 +49,15 @@ $%&'()*+,-./:
 Extended character support is planned for the future, as well as the additional 90 character slots allowed.
 
 # Templates & Downloads
+> Font Template includes guides
 
-## Font Template with guides
-* .ase (Aseprite) format
-* .png format
+* [.ase (Aseprite) format](https://github.com/sprngr/px2bfm/blob/master/templates/template.ase?raw=true)
+* [.png format](https://github.com/sprngr/px2bfm/blob/master/templates/template.png?raw=true)
 
-The blue doted line creates the grid of 16x16 blocks, the red aligns with the red
+The blue dotted line creates the grid of 16x16 blocks, the red aligns with the red
 baseline in the web app.
 
-<img src="templates/template.png" width="416" style="image-rendering:pixelated;"/>
+<img src="templates/template.png"/>
 
 # License
 MIT &copy; [Michael Springer](https://github.com/sprngr) 2018
