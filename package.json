@@ -1,14 +1,19 @@
 {
-  "name": "px2bitfontmaker2",
+  "name": "px2bfm",
   "version": "1.0.0",
-  "description": "Read in spritesheet to generate json for bitfontmaker2",
-  "main": "index.js",
+  "description": "Parse pixels to BitFontMaker2 font json format",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sprngr/px2bitfontmaker2.git"
+  },
+  "main": "./lib/index.js",
   "keywords": [
     "pixel"
   ],
   "author": "sprngr",
   "license": "MIT",
   "dependencies": {
-    "jimp": "^0.2.28"
+    "jimp": "^0.2.28",
+    "vorpal": "^1.12.0"
   }
 }
