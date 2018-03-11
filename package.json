@@ -1,26 +1,30 @@
 {
-    "name": "px2bfm",
-    "version": "1.0.0",
-    "description": "Parse pixels to BitFontMaker2 JSON font format",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/sprngr/px2bitfontmaker2.git"
-    },
-    "bin": {
-        "px2bfm": "./bin/px2bfm"
-    },
-    "main": "./lib/px2bitfontmaker2.js",
-    "keywords": [
-        "pixel",
-        "font"
-    ],
-    "author": "sprngr",
-    "license": "MIT",
-    "dependencies": {
-        "commander": "^2.15.0",
-        "jimp": "^0.2.28"
-    },
-    "scripts": {
-        "start": "node ./bin/px2bfm"
-    }
+  "name": "px2bfm",
+  "version": "1.0.0",
+  "description": "Parse pixels to BitFontMaker2 JSON font format",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sprngr/px2bitfontmaker2.git"
+  },
+  "bin": {
+    "px2bfm": "./bin/px2bfm"
+  },
+  "main": "./lib/px2bitfontmaker2.js",
+  "keywords": [
+    "pixel",
+    "font"
+  ],
+  "author": "sprngr",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.15.0",
+    "jimp": "^0.2.28"
+  },
+  "scripts": {
+    "start": "node ./bin/px2bfm",
+    "test": "ava"
+  },
+  "devDependencies": {
+    "ava": "^1.0.0-beta.3"
+  }
 }

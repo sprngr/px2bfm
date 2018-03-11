@@ -4,6 +4,8 @@
 
 > Parse pixels to [BitFontMaker2](http://www.pentacom.jp/pentacom/bitfontmaker2/) JSON font format
 
+
+[![Travis](https://img.shields.io/travis/sprngr/px2bfm.svg?style=for-the-badge)](https://travis-ci.org/sprngr/px2bfm)
 ![From Pittsburgh With Love](https://img.shields.io/badge/from%20pittsburgh%20with-%E2%9D%A4-yellow.svg?style=for-the-badge)
 
 Pixels 2 [BitFontMaker2](http://www.pentacom.jp/pentacom/bitfontmaker2/) (aka px2bfm) is a simple command line tool with the intention of
@@ -23,20 +25,20 @@ allowing you to use your desired pixel editor to draw font glyphs, creating comp
 # Installation
 > This package requires npm and node.js. If you don't have npm or node.js on your local machine, check out [this guide on getting setup](https://docs.npmjs.com/getting-started/installing-node).
 
-```shell
+```console
 $ npm install --global px2bfm
 ```
 
 ## Alternative Installation
 
 If you don't feel like installing it globally via npm, you can clone this repo and run the script directly:
-```shell
+```console
 $ ./bin/px2bfm
 ```
 
 # Usage
-```shell
-$ px2bfm
+```console
+$ px2bfm --help
 
   Usage: px2bfm [options] <file>
 
@@ -54,31 +56,31 @@ $ px2bfm
 The `fontname` and `creator` arguments are optional, but you'll probably want to set that at some point.
 
 Example:
-```shell
+```console
 $ px2bfm yourFileHere.png
 # Output: {A lot of JSON}
 ```
 
 To get this into a file:
-```shell
+```console
 $ px2bfm yourFileHere.png > bfm2.json # Or whatever you want to call it
 ```
 
 To put it on the clipboard to paste into the textfield on the web app:
 
 **MacOS**
-```shell
+```console
 $ px2bfm yourFileHere.png | pbcopy
 ```
 
 **Windows**
-```shell
+```console
 # I'm pretty sure this is a standard tool
 $ px2bfm yourFileHere.png | clip
 ```
 
 **Linux**
-```shell
+```console
 # Let's be honest, if you're on linux you're a pro at this so why do I need to tell you
 $ px2bfm yourFileHere.png | xclip
 ```
