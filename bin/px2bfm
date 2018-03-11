@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+const commander = require('commander');
+const px2bfm = require('../lib/px2bitfontmaker2.js');
+
+commander
+    .arguments('<file>')
+    .option('-n, --name <fontname>', 'The name of the font being exported')
+    .option('-c, --creator <creator>', 'The font creator\'s name')
+    .action(function(file) {
+        Promise.all([px2bfm(file)])
+            .then((output) => {
+                console.log(output);
+            });
+    })
+    .parse(process.argv);
