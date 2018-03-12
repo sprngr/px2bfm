@@ -92,7 +92,7 @@ Using one of the font templates provided (or your own, as long as it fits within
 Sprite sheets must have a width of 208px to maintain some parity with the layout of BitFontMaker2.
 The height of the file must be a power of 16 (default is 128px), this will allow for future support of extended character sets.
 
-Be sure to use black (hex #000000 / rgba 255, 255, 255, 255) for glyph pixels, the image parser only cares about those. Any other colors are ignored.
+Be sure to use black (hex #000000 / rgba 0, 0, 0, 255) for glyph pixels, the image parser only cares about those. Any other colors are ignored.
 
 Each glyph must fit within a 16x16 pixel block, this is required by the web app.
 
