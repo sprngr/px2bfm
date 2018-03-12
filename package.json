@@ -9,7 +9,7 @@
   "bin": {
     "px2bfm": "./bin/px2bfm"
   },
-  "main": "./lib/px2bitfontmaker2.js",
+  "main": "./lib/px2bfm.js",
   "keywords": [
     "pixel",
     "font"
@@ -25,6 +25,8 @@
     "test": "ava"
   },
   "devDependencies": {
-    "ava": "^1.0.0-beta.3"
+    "ava": "^1.0.0-beta.3",
+    "browserify": "^16.1.1",
+    "uglify-js": "^3.3.14"
   }
 }
