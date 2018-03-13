@@ -1,4 +1,6 @@
+docs
 templates
 
+.travis.yml
 logo.png
 test.js

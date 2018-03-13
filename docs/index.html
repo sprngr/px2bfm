@@ -4,16 +4,15 @@ layout: default
 <style media="screen">
     #drop-area {
         border-image: url(media/border.png) 16 fill repeat;
-        border-image-width: 16px;
         border-image-outset: 4px;
-        width: 480px;
-        height: 160px;
+        border-image-width: 16px;
         font-family: sans-serif;
-        margin: 0 auto;
+        margin: 0 auto 10px;
         padding: 20px;
+        width: 480px;
     }
     #drop-area.highlight {
-        border-color: purple;
+        background-color: none;
     }
     p {
         margin-top: 0;
@@ -56,16 +55,17 @@ layout: default
 <div id="drop-area">
     <form class="drop-form">
         <p>Upload sprite sheet with file dialog or by dragging and dropping image onto the dashed region</p>
-        <input type="file" id="fileElem" accept="image/*" onchange="handleFile(this.files)">
+        <input type="file" id="fileElem" accept="image/*" onchange="handleFiles(this.files)">
         <label class="button" for="fileElem">Select sprite sheet</label>
+        <div id="preview">
+            <img src="media/preview.png"/>
+        </div>
     </form>
 </div>
 <h2>Preview</h2>
-<div id="preview">
-    <img src="media/preview.png"/>
-</div>
+
 <h2>Output</h2>
 <textarea id="output"></textarea>
 
 <script src="js/jimp.min.js" charset="utf-8"></script>
-<script src="js/app.build.js" charset="utf-8"></script>
+<script src="js/app.min.js" charset="utf-8"></script>

@@ -6,6 +6,7 @@
 
 
 [![Travis](https://img.shields.io/travis/sprngr/px2bfm.svg?style=for-the-badge)](https://travis-ci.org/sprngr/px2bfm)
+[![npm](https://img.shields.io/npm/v/px2bfm.svg?style=for-the-badge)](https://www.npmjs.com/package/px2bfm)
 ![From Pittsburgh With Love](https://img.shields.io/badge/from%20pittsburgh%20with-%E2%9D%A4-yellow.svg?style=for-the-badge)
 
 Pixels 2 [BitFontMaker2](http://www.pentacom.jp/pentacom/bitfontmaker2/) (aka px2bfm) is a simple command line tool with the intention of
