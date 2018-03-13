@@ -1,13 +1,13 @@
 'use strict';
 
-require('buffer');
-const px2bfm = require('../lib/px2bfm.js');
+window.Buffer = require('buffer');
+const px2bfm = require('../../lib/px2bfm.js');
 
 // Drag and Drop code based off Smashing Magazine
 // https://www.smashingmagazine.com/2018/01/drag-drop-file-uploader-vanilla-js/
-let dropArea = document.getElementById('drop-area')
+let dropArea = document.getElementById('drop-area');
 
-dropArea.addEventListener('drop', handleDrop, false)
+dropArea.addEventListener('drop', handleDrop, false);
 
 function handleDrop(e) {
   let dt = e.dataTransfer
@@ -16,10 +16,24 @@ function handleDrop(e) {
   handleFile(file);
 }
 
-function handleFile(files) {
-    previewFile(file);
-    console.log(file);
+function handleFile(file) {
+    let reader = new FileReader();
+    reader.readAsDataURL(file[0]);
+    reader.onloadend = function() {
+        // Display preview
+        let img = document.createElement('img')
+        img.src = reader.result
+        document.getElementById('gallery').appendChild(img)
+
+        Promise.resolve(px2bfm(reader.result))
+            .then((output) => {
+                document.getElementById('output').innerHTML = output;
+            });
+    }
 }
+
+// Exposing on window because browserify was being weird
+window.handleFile = handleFile;
 
 ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
   dropArea.addEventListener(eventName, preventDefaults, false)
@@ -40,16 +54,6 @@ function highlight(e) {
 function preventDefaults (e) {
   e.preventDefault()
   e.stopPropagation()
-}
-
-function previewFile(file) {
-  let reader = new FileReader()
-  reader.readAsDataURL(file)
-  reader.onloadend = function() {
-    let img = document.createElement('img')
-    img.src = reader.result
-    document.getElementById('gallery').appendChild(img)
-  }
 }
 
 function unhighlight(e) {

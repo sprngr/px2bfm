@@ -1943,14 +1943,14 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 },{}],4:[function(require,module,exports){
 'use strict';
 
-require('buffer');
-const px2bfm = require('../lib/px2bfm.js');
+window.Buffer = require('buffer');
+const px2bfm = require('../../lib/px2bfm.js');
 
 // Drag and Drop code based off Smashing Magazine
 // https://www.smashingmagazine.com/2018/01/drag-drop-file-uploader-vanilla-js/
-let dropArea = document.getElementById('drop-area')
+let dropArea = document.getElementById('drop-area');
 
-dropArea.addEventListener('drop', handleDrop, false)
+dropArea.addEventListener('drop', handleDrop, false);
 
 function handleDrop(e) {
   let dt = e.dataTransfer
@@ -1959,10 +1959,24 @@ function handleDrop(e) {
   handleFile(file);
 }
 
-function handleFile(files) {
-    previewFile(file);
-    console.log(file);
+function handleFile(file) {
+    let reader = new FileReader();
+    reader.readAsDataURL(file[0]);
+    reader.onloadend = function() {
+        // Display preview
+        let img = document.createElement('img')
+        img.src = reader.result
+        document.getElementById('gallery').appendChild(img)
+
+        Promise.resolve(px2bfm(reader.result))
+            .then((output) => {
+                document.getElementById('output').innerHTML = output;
+            });
+    }
 }
+
+// Exposing on window because browserify was being weird
+window.handleFile = handleFile;
 
 ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
   dropArea.addEventListener(eventName, preventDefaults, false)
@@ -1985,21 +1999,11 @@ function preventDefaults (e) {
   e.stopPropagation()
 }
 
-function previewFile(file) {
-  let reader = new FileReader()
-  reader.readAsDataURL(file)
-  reader.onloadend = function() {
-    let img = document.createElement('img')
-    img.src = reader.result
-    document.getElementById('gallery').appendChild(img)
-  }
-}
-
 function unhighlight(e) {
   dropArea.classList.remove('highlight')
 }
 
-},{"../lib/px2bfm.js":7,"buffer":2}],5:[function(require,module,exports){
+},{"../../lib/px2bfm.js":7,"buffer":2}],5:[function(require,module,exports){
 module.exports={
     "33":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     "34":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -2131,7 +2135,8 @@ module.exports=[
 'use strict';
 
 // Required Modules
-const Jimp = require('jimp');
+// Browser support
+const Jimp = window.Jimp || require('jimp');
 
 // bitmask values for each column
 const bitMaskMap = [1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768];

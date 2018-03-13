@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-<script src="app.build.js" charset="utf-8"></script>
 <style media="screen">
     #drop-area {
         border: 2px dashed #ccc;
@@ -46,10 +45,15 @@ layout: default
 </style>
 <div id="drop-area">
     <form class="my-form">
-        <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
-        <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFile(this.files)">
-        <label class="button" for="fileElem">Select some files</label>
+        <p>Upload sprite sheet with file dialog or by dragging and dropping image onto the dashed region</p>
+        <input type="file" id="fileElem" accept="image/*" onchange="handleFile(this.files)">
+        <label class="button" for="fileElem">Select sprite sheet</label>
     </form>
 </div>
 
 <div id="gallery"></div>
+
+<textarea id="output"></textarea>
+
+<script src="js/jimp.min.js" charset="utf-8"></script>
+<script src="js/app.build.js" charset="utf-8"></script>
