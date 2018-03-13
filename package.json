@@ -23,7 +23,7 @@
   "scripts": {
     "start": "node ./bin/px2bfm",
     "test": "ava",
-    "build-docs": "browserify ./docs/js/app.js -o ./docs/js/app.build.js",
+    "build-docs": "browserify ./docs/js/app.js | uglifyjs -o ./docs/js/app.build.js",
     "watch-docs": "watchify ./docs/js/app.js -o ./docs/js/app.build.js"
   },
   "devDependencies": {

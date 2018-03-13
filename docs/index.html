@@ -3,9 +3,11 @@ layout: default
 ---
 <style media="screen">
     #drop-area {
-        border: 2px dashed #ccc;
-        border-radius: 20px;
+        border-image: url(media/border.png) 16 fill repeat;
+        border-image-width: 16px;
+        border-image-outset: 4px;
         width: 480px;
+        height: 160px;
         font-family: sans-serif;
         margin: 0 auto;
         padding: 20px;
@@ -60,7 +62,7 @@ layout: default
 </div>
 <h2>Preview</h2>
 <div id="preview">
-    <img src="../templates/template.png"/>
+    <img src="media/preview.png"/>
 </div>
 <h2>Output</h2>
 <textarea id="output"></textarea>
