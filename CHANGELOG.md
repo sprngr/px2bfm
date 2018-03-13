@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [1.0.2] - 2018-03-13
 ### Added
 - Bugfix for misplaced Euro sign (8364). It was erroneously added to the end in the mapping array.
 - Static single page app implementing the package, still needs to be styled but functions.
