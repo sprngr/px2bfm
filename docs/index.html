@@ -7,7 +7,7 @@ layout: default
         border-radius: 20px;
         width: 480px;
         font-family: sans-serif;
-        margin: 100px auto;
+        margin: 0 auto;
         padding: 20px;
     }
     #drop-area.highlight {
@@ -16,17 +16,19 @@ layout: default
     p {
         margin-top: 0;
     }
-    .my-form {
+    .drop-form {
         margin-bottom: 10px;
     }
-    #gallery {
-        margin-top: 10px;
+    #preview {
+        margin: 10px auto;
+        text-align: center;
     }
-    #gallery img {
-        width: 150px;
+    #preview img {
+        width: 416px;
         margin-bottom: 10px;
         margin-right: 10px;
         vertical-align: middle;
+        image-rendering: pixelated;
     }
     .button {
         display: inline-block;
@@ -42,17 +44,25 @@ layout: default
     #fileElem {
         display: none;
     }
+    #output {
+        display: block;
+        height: 300px;
+        width: 480px;
+        margin: 0 auto;
+    }
 </style>
 <div id="drop-area">
-    <form class="my-form">
+    <form class="drop-form">
         <p>Upload sprite sheet with file dialog or by dragging and dropping image onto the dashed region</p>
         <input type="file" id="fileElem" accept="image/*" onchange="handleFile(this.files)">
         <label class="button" for="fileElem">Select sprite sheet</label>
     </form>
 </div>
-
-<div id="gallery"></div>
-
+<h2>Preview</h2>
+<div id="preview">
+    <img src="../templates/template.png"/>
+</div>
+<h2>Output</h2>
 <textarea id="output"></textarea>
 
 <script src="js/jimp.min.js" charset="utf-8"></script>
