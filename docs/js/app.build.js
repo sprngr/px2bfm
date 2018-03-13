@@ -1964,9 +1964,7 @@ function handleFile(file) {
     reader.readAsDataURL(file[0]);
     reader.onloadend = function() {
         // Display preview
-        let img = document.createElement('img')
-        img.src = reader.result
-        document.getElementById('gallery').appendChild(img)
+        document.querySelector('#preview img').src = reader.result;
 
         Promise.resolve(px2bfm(reader.result))
             .then((output) => {
@@ -2135,8 +2133,8 @@ module.exports=[
 'use strict';
 
 // Required Modules
-// Browser support
-const Jimp = window.Jimp || require('jimp');
+// Browser support requires usage of jimp/browser
+const Jimp = (typeof window != 'undefined') ? window.Jimp : require('jimp');
 
 // bitmask values for each column
 const bitMaskMap = [1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768];

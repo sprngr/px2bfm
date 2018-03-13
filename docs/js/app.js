@@ -21,9 +21,7 @@ function handleFile(file) {
     reader.readAsDataURL(file[0]);
     reader.onloadend = function() {
         // Display preview
-        let img = document.createElement('img')
-        img.src = reader.result
-        document.getElementById('gallery').appendChild(img)
+        document.querySelector('#preview img').src = reader.result;
 
         Promise.resolve(px2bfm(reader.result))
             .then((output) => {
