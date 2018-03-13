@@ -22,11 +22,10 @@
   },
   "scripts": {
     "start": "node ./bin/px2bfm",
-    "test": "ava"
+    "test": "ava",
+    "build-docs": "browserify ./docs/app.js | uglifyjs --compress -o ./docs/app.build.js"
   },
   "devDependencies": {
-    "ava": "^1.0.0-beta.3",
-    "browserify": "^16.1.1",
-    "uglify-js": "^3.3.14"
+    "ava": "^1.0.0-beta.3"
   }
 }
