@@ -1,6 +1,6 @@
 import test from 'ava';
 
-const px2bfm = require('./lib/px2bitfontmaker2.js');
+const px2bfm = require('./lib/px2bfm.js');
 
 test('Generates BitFontMaker2 JSON', async t => {
     const fontname = 'Test Name';

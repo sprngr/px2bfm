@@ -3,7 +3,7 @@
 'use strict';
 
 const program = require('commander');
-const px2bfm = require('../lib/px2bitfontmaker2.js');
+const px2bfm = require('../lib/px2bfm.js');
 const packageInfo = require('../package.json');
 
 let fileValue;
