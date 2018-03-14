@@ -43,12 +43,19 @@ layout: default
         cursor: pointer;
         display: inline-block;
         padding: 10px;
-    }
-    .button:hover {
-        background: #ddd;
+        text-align: center;
+        width: 100%;
     }
     #fileElem {
         display: none;
+    }
+    #text-form {
+        padding: 20px;
+    }
+    #text-form input {
+        border: 1px solid #222034;
+        border-radius: 4px;
+        padding: 5px;
     }
     #output {
         display: block;
@@ -68,13 +75,12 @@ layout: default
     }
 </style>
 
-<h2>
-    <img src="media/header_upload.png" alt="upload"/>
-</h2>
+<img src="media/header_options.png" alt="options"/>
 <div id="text-form">
     <input id="font-name" placeholder="Font Name (Optional)">
-    <input id="creator-name" placeholder="Creator Name (Optional)">
+    <input id="font-creator" placeholder="Creator Name (Optional)">
 </div>
+<img src="media/header_upload.png" alt="upload"/>
 <div id="drop-area">
     <form class="drop-form">
         <input type="file" id="fileElem" accept="image/*" onchange="handleFiles(this.files)">
@@ -85,12 +91,10 @@ layout: default
 </div>
 
 <div id="output-display" class="hidden">
-    <h2>
-        <img src="media/header_copy.png" alt="upload" onclick="copyText()"/>
-    </h2>
+    <img src="media/header_copy.png" alt="copy" onclick="copyText()"/>
     <textarea id="output"></textarea>
+    <a class="button" href="http://www.pentacom.jp/pentacom/bitfontmaker2/"><img src="media/header_import.png" alt="import"/></a>
 </div>
 
-<a class="button" href="http://www.pentacom.jp/pentacom/bitfontmaker2/">Go to BitFontMaker2</a>
 <script src="js/jimp.min.js" charset="utf-8"></script>
 <script src="js/app.min.js" charset="utf-8"></script>

@@ -63,7 +63,10 @@ function convertFile(file) {
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = function() {
-        Promise.resolve(px2bfm(reader.result))
+        let fontNameInput = document.querySelector('#font-name').val;
+        let fontCreatorInput = document.querySelector('#font-creator').val;
+
+        Promise.resolve(px2bfm(reader.result, fontNameInput, fontCreatorInput))
         .then((output) => {
             document.querySelector('#output-display').classList.remove('hidden');
             outputTextarea.innerHTML = output;
