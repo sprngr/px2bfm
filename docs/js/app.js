@@ -7,6 +7,8 @@ const px2bfm = require('../../lib/px2bfm.js');
 // https://www.smashingmagazine.com/2018/01/drag-drop-file-uploader-vanilla-js/
 let dropArea = document.querySelector('#drop-area');
 let outputTextarea = document.querySelector('#output');
+let fontNameInput = document.querySelector('#font-name').value;
+let fontCreatorInput = document.querySelector('#font-creator').value;
 
 // Prevent default drag behaviors
 ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
@@ -31,6 +33,8 @@ outputTextarea.addEventListener('click', copyText, false);
 function copyText() {
     outputTextarea.select();
     document.execCommand('Copy');
+    document.querySelector('#output-display img').src = 'media/header_copied.png';
+    document.querySelector('#bfm-button').classList.remove('hidden');
 }
 
 function preventDefaults (e) {
@@ -63,9 +67,6 @@ function convertFile(file) {
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = function() {
-        let fontNameInput = document.querySelector('#font-name').val;
-        let fontCreatorInput = document.querySelector('#font-creator').val;
-
         Promise.resolve(px2bfm(reader.result, fontNameInput, fontCreatorInput))
         .then((output) => {
             document.querySelector('#output-display').classList.remove('hidden');
@@ -83,11 +84,6 @@ function previewFile(file) {
     }
 }
 
-function reset() {
-    let upload = document.querySelector('.upload img');
-    upload.src = 'media/upload.png';
-}
-
 // Exposing on window due to some browserify scoping fuckery
-window.handleFiles = handleFiles;
 window.copyText = copyText;
+window.handleFiles = handleFiles;

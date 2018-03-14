@@ -8,6 +8,12 @@ layout: default
     p {
         margin-top: 0;
     }
+    #bfm-button {
+        margin-top: 20px;
+    }
+    #bfm-button .button {
+        width: 100%;
+    }
     #drop-area {
         border-image: url(media/border.png) 16 fill repeat;
         border-image-outset: 4px;
@@ -22,8 +28,21 @@ layout: default
         border-image-outset: 4px;
         border-image-width: 16px;
     }
+    .button {
+        border-image: url(media/btn_border.png) 16 fill repeat;
+        border-image-outset: 4px;
+        border-image-width: 16px;
+        color: #ffffff;
+        cursor: pointer;
+        display: inline-block;
+        padding: 10px;
+        text-align: center;
+    }
     .drop-form {
         margin-bottom: 10px;
+    }
+    .hidden {
+        display:none;
     }
     #preview {
         margin: 10px auto;
@@ -35,22 +54,11 @@ layout: default
         vertical-align: middle;
         width: 416px;
     }
-    .button {
-        border-image: url(media/btn_border.png) 16 fill repeat;
-        border-image-outset: 4px;
-        border-image-width: 16px;
-        color: #ffffff;
-        cursor: pointer;
-        display: inline-block;
-        padding: 10px;
-        text-align: center;
-        width: 100%;
-    }
     #fileElem {
         display: none;
     }
     #text-form {
-        padding: 20px;
+        padding: 10px 0;
     }
     #text-form input {
         border: 1px solid #222034;
@@ -58,6 +66,8 @@ layout: default
         padding: 5px;
     }
     #output {
+        border: 1px solid #222034;
+        border-radius: 4px;
         display: block;
         height: 300px;
         margin: 0 auto;
@@ -70,15 +80,14 @@ layout: default
         display: inline-block;
         padding: 10px;
     }
-    .hidden {
-        display:none;
-    }
 </style>
 
 <img src="media/header_options.png" alt="options"/>
 <div id="text-form">
+    <p>You may set some configuration options now or after it's imported later in BitFontMaker2.</p>
     <input id="font-name" placeholder="Font Name (Optional)">
     <input id="font-creator" placeholder="Creator Name (Optional)">
+    <button type="button" class="button" onclick="window.location.reload(true)"><img src="media/header_reset.png"/></button>
 </div>
 <img src="media/header_upload.png" alt="upload"/>
 <div id="drop-area">
@@ -93,6 +102,9 @@ layout: default
 <div id="output-display" class="hidden">
     <img src="media/header_copy.png" alt="copy" onclick="copyText()"/>
     <textarea id="output"></textarea>
+</div>
+
+<div id="bfm-button" class="hidden">
     <a class="button" href="http://www.pentacom.jp/pentacom/bitfontmaker2/"><img src="media/header_import.png" alt="import"/></a>
 </div>
 
