@@ -12,14 +12,15 @@ layout: default
         border-image: url(media/border.png) 16 fill repeat;
         border-image-outset: 4px;
         border-image-width: 16px;
-        font-family: sans-serif;
         margin: 0 auto 10px;
         padding: 20px;
         text-align: center;
         width: 480px;
     }
     #drop-area.highlight {
-        background-color: none;
+        border-image: url(media/border_highlight.png) 16 fill repeat;
+        border-image-outset: 4px;
+        border-image-width: 16px;
     }
     .drop-form {
         margin-bottom: 10px;
@@ -38,9 +39,7 @@ layout: default
         border-image: url(media/btn_border.png) 16 fill repeat;
         border-image-outset: 4px;
         border-image-width: 16px;
-        background: #ccc;
-        border-radius: 5px;
-        border: 1px solid #ccc;
+        color: #ffffff;
         cursor: pointer;
         display: inline-block;
         padding: 10px;
@@ -72,8 +71,10 @@ layout: default
 <h2>
     <img src="media/header_upload.png" alt="upload"/>
 </h2>
-<input id="font-name" placeholder="Font Name (Optional)">
-<input id="creator-name" placeholder="Creator Name (Optional)">
+<div id="text-form">
+    <input id="font-name" placeholder="Font Name (Optional)">
+    <input id="creator-name" placeholder="Creator Name (Optional)">
+</div>
 <div id="drop-area">
     <form class="drop-form">
         <input type="file" id="fileElem" accept="image/*" onchange="handleFiles(this.files)">
@@ -83,10 +84,12 @@ layout: default
     </form>
 </div>
 
-<h1>
-    <img src="media/header_copy.png" alt="upload"/>
-</h1>
-<textarea id="output"></textarea>
+<div id="output-display" class="hidden">
+    <h2>
+        <img src="media/header_copy.png" alt="upload" onclick="copyText()"/>
+    </h2>
+    <textarea id="output"></textarea>
+</div>
 
 <a class="button" href="http://www.pentacom.jp/pentacom/bitfontmaker2/">Go to BitFontMaker2</a>
 <script src="js/jimp.min.js" charset="utf-8"></script>

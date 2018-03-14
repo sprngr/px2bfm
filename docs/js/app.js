@@ -5,8 +5,8 @@ const px2bfm = require('../../lib/px2bfm.js');
 
 // Drag and Drop code based off Smashing Magazine
 // https://www.smashingmagazine.com/2018/01/drag-drop-file-uploader-vanilla-js/
-let dropArea = document.getElementById('drop-area');
-let outputTextarea = document.getElementById('output');
+let dropArea = document.querySelector('#drop-area');
+let outputTextarea = document.querySelector('#output');
 
 // Prevent default drag behaviors
 ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
@@ -43,7 +43,7 @@ function highlight(e) {
 }
 
 function unhighlight(e) {
-    dropArea.classList.remove('active');
+    dropArea.classList.remove('highlight');
 }
 
 function handleDrop(e) {
@@ -65,7 +65,8 @@ function convertFile(file) {
     reader.onloadend = function() {
         Promise.resolve(px2bfm(reader.result))
         .then((output) => {
-            document.getElementById('output').innerHTML = output;
+            document.querySelector('#output-display').classList.remove('hidden');
+            outputTextarea.innerHTML = output;
         });
     }
 }
@@ -86,3 +87,4 @@ function reset() {
 
 // Exposing on window due to some browserify scoping fuckery
 window.handleFiles = handleFiles;
+window.copyText = copyText;
