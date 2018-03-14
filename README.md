@@ -14,6 +14,7 @@ allowing you to use your desired pixel editor to draw font glyphs, creating comp
 
 # Table of Contents
 
+- [Web App](#web-app)
 - [Installation](#installation)
 	- [Alternative Installation](#alternative-installation)
 - [Usage](#usage)
@@ -22,6 +23,13 @@ allowing you to use your desired pixel editor to draw font glyphs, creating comp
 - [Character Support](#character-support)
 - [Download Template](#download-template)
 - [License](#license)
+
+# Web App
+
+In the spirit of ease of use, this tool is available as a web app with a simple upload interface: [https://sprngr.github.io/px2bfm/](https://sprngr.github.io/px2bfm/)
+
+It runs exactly the same library on npm, just packaged up neatly within a GitHub hosted site. The only requirements here are to have compatible sprite sheets, template downloads
+and other important usage information can be found below in this README.
 
 # Installation
 > This package requires npm and node.js. If you don't have npm or node.js on your local machine, check out [this guide on getting setup](https://docs.npmjs.com/getting-started/installing-node).
