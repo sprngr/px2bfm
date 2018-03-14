@@ -59,6 +59,7 @@ function handleDrop(e) {
 
 function handleFiles(files) {
     files = [...files];
+    document.querySelector('#error-display').classList.add('hidden');
     files.forEach(convertFile);
     files.forEach(previewFile);
 }
@@ -69,6 +70,11 @@ function convertFile(file) {
     reader.onloadend = function() {
         Promise.resolve(px2bfm(reader.result, fontNameInput, fontCreatorInput))
         .then((output) => {
+            console.log(output);
+            if (typeof output === 'undefined') {
+                document.querySelector('#error-display').classList.remove('hidden');
+                return;
+            }
             document.querySelector('#output-display').classList.remove('hidden');
             outputTextarea.innerHTML = output;
         });
