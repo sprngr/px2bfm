@@ -7,8 +7,8 @@ const px2bfm = require('../../lib/px2bfm.js');
 // https://www.smashingmagazine.com/2018/01/drag-drop-file-uploader-vanilla-js/
 let dropArea = document.querySelector('#drop-area');
 let outputTextarea = document.querySelector('#output');
-let fontNameInput = document.querySelector('#font-name').value;
-let fontCreatorInput = document.querySelector('#font-creator').value;
+let fontNameInput = document.querySelector('#font-name');
+let fontCreatorInput = document.querySelector('#font-creator');
 
 // Prevent default drag behaviors
 ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
@@ -68,7 +68,7 @@ function convertFile(file) {
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = function() {
-        Promise.resolve(px2bfm(reader.result, fontNameInput, fontCreatorInput))
+        Promise.resolve(px2bfm(reader.result, fontNameInput.value, fontCreatorInput.value))
         .then((output) => {
             if (typeof output === 'undefined') {
                 document.querySelector('#error-display').classList.remove('hidden');
