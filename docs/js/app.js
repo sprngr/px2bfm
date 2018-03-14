@@ -70,7 +70,6 @@ function convertFile(file) {
     reader.onloadend = function() {
         Promise.resolve(px2bfm(reader.result, fontNameInput, fontCreatorInput))
         .then((output) => {
-            console.log(output);
             if (typeof output === 'undefined') {
                 document.querySelector('#error-display').classList.remove('hidden');
                 return;
