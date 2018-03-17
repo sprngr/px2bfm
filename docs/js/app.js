@@ -9,6 +9,20 @@ let dropArea = document.querySelector('#drop-area');
 let outputTextarea = document.querySelector('#output');
 let fontNameInput = document.querySelector('#font-name');
 let fontCreatorInput = document.querySelector('#font-creator');
+let log = document.querySelector('#error-display'); //.classList.remove('hidden')
+
+// Override console.error to let it bubble up properly
+['error'].forEach((verb) => {
+    console[verb] = ((method, verb, log) => {
+        return (text) => {
+            method(text);
+            var msg = document.createElement('code');
+            msg.textContent = 'Error: ' + text;
+            log.appendChild(msg);
+            log.classList.remove('hidden');
+        };
+    })(console[verb].bind(console), verb, log);
+});
 
 // Prevent default drag behaviors
 ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
@@ -59,7 +73,7 @@ function handleDrop(e) {
 
 function handleFiles(files) {
     files = [...files];
-    document.querySelector('#error-display').classList.add('hidden');
+    resetLogDisplay();
     files.forEach(convertFile);
     files.forEach(previewFile);
 }
@@ -70,10 +84,9 @@ function convertFile(file) {
     reader.onloadend = function() {
         Promise.resolve(px2bfm(reader.result, fontNameInput.value, fontCreatorInput.value))
         .then((output) => {
-            if (typeof output === 'undefined') {
-                document.querySelector('#error-display').classList.remove('hidden');
-                return;
-            }
+            // If output is undefined, an error was thrown. Handled by console override
+            if (typeof output === 'undefined') return false;
+
             document.querySelector('#output-display').classList.remove('hidden');
             outputTextarea.innerHTML = output;
         });
@@ -89,6 +102,12 @@ function previewFile(file) {
     }
 }
 
+function resetLogDisplay() {
+    log.classList.add('hidden');
+    while (log.firstChild) {
+        log.removeChild(log.firstChild);
+    }
+}
 // Exposing on window due to some browserify scoping fuckery
 window.copyText = copyText;
 window.handleFiles = handleFiles;
