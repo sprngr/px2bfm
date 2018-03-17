@@ -1,26 +1,25 @@
 {
-  "name": "px2bfm-gh-pages",
-  "version": "0.1.0",
-  "description": "A Jekyll site built on GitHub's Primer styles",
-  "main": "index.html",
-  "scripts": {
-    "test": "script/cibuild"
-  },
-  "author": "Ben Balter",
-  "license": "MIT",
-  "dependencies": {
-    "anchor-js": "^4.0.0",
-    "primer-base": "^1.3.0",
-    "primer-layout": "^1.2.0",
-    "primer-markdown": "^3.5.0",
-    "primer-support": "^4.2.0",
-    "primer-utilities": "^4.5.0"
-  },
-  "devDependencies": {
-    "buffer": "^5.1.0",
-    "px2bfm": "^1.0.2"
-  },
-  "scripts": {
-      "build": "browserify ./assets/javascript/app.js | uglifyjs -o ./assets/javascript/app.min.js"
-  }
+    "name": "px2bfm-gh-pages",
+    "version": "0.1.0",
+    "description": "A Jekyll site built on GitHub's Primer styles",
+    "main": "index.html",
+    "scripts": {
+        "test": "script/cibuild",
+        "build:js": "browserify ./assets/javascript/app.js | uglifyjs -o ./assets/javascript/app.min.js",
+        "watch:js": "watchify ./assets/javascript/app.js -o 'uglifyjs > ./assets/javascript/app.min.js'"
+    },
+    "author": "Ben Balter (original), modified by sprngr",
+    "license": "MIT",
+    "dependencies": {
+        "anchor-js": "^4.0.0",
+        "primer-base": "^1.3.0",
+        "primer-layout": "^1.2.0",
+        "primer-markdown": "^3.5.0",
+        "primer-support": "^4.2.0",
+        "primer-utilities": "^4.5.0"
+    },
+    "devDependencies": {
+        "buffer": "^5.1.0",
+        "px2bfm": "^1.0.2"
+    }
 }

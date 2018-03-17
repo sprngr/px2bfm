@@ -1,32 +1,50 @@
 ---
 layout: default
 ---
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+<p>
+  Pixels 2 BitFontMaker2 (aka px2bfm) is a simple tool allowing you to use
+  your desired pixel editor to draw font glyphs, creating compatible BitFontMaker2 JSON,
+  and allowing you to import it to generate a new font.
+</p>
+<p>Template Downloads:
+    <a href="https://github.com/sprngr/px2bfm/blob/master/templates/template.ase?raw=true" target="_blank">.ase (Aseprite) format</a> | <a href="https://github.com/sprngr/px2bfm/blob/master/templates/template.png?raw=true" target="_blank">.png format</a>
+</p>
+<p>
+  For more information as to how to use this, check the <a href="/manual">manual</a>.
+</p>
+<p>
+  For more information about the project as a whole or the px2bfm npm package, check the <a href="{{ site.github.repository_url }}">GitHub repository</a>.
+</p>
 <h2>Font Configuration Options</h2>
 <div id="text-form">
     <p>You may set some configuration options now or after it's imported later in BitFontMaker2.</p>
-    <input id="font-name" placeholder="Font Name (Optional)">
-    <input id="font-creator" placeholder="Creator Name (Optional)">
-    <button type="button" class="button" onclick="window.location.reload(true)">Reset</button>
+    <p><input id="font-name" placeholder="Font Name (Optional)"></p>
+    <p><input id="font-creator" placeholder="Creator Name (Optional)"></p>
 </div>
 <h2>Upload Sprite Sheet</h2>
+<p>Drag and drop or click to upload your sprite sheet of 16x16 font glyphs.</p>
 <div id="drop-area">
     <form class="drop-form">
-        <input type="file" id="fileElem" accept="image/*" onchange="handleFiles(this.files)">
-        <label class="upload" for="fileElem">
+        <input type="file" id="file-input" class="hidden" accept="image/*" onchange="handleFiles(this.files)">
+        <label class="upload" for="file-input">
             <img src="assets/media/upload.png"/>
         </label>
     </form>
 </div>
-<div id="error-display" class="hidden">
-</div>
-<div id="output-display" class="hidden">
+<div id="error-display" class="hidden"></div>
+<div id="output-display">
     <h2>Copy JSON</h2>
-    <textarea id="output"></textarea>
-</div>
-
-<div id="bfm-button" class="hidden">
-    <a class="button" href="http://www.pentacom.jp/pentacom/bitfontmaker2/">Import JSON into BitFontMaker</a>
+    <p>Click the text below to copy the JSON, and then import it into BitFontMaker2</p>
+    <pre class="output-container"><code id="output" class="lang-json"></code></pre>
+    <p>
+        <a class="btn" href="http://www.pentacom.jp/pentacom/bitfontmaker2/" target="_blank">Go to BitFontMaker</a>
+    </p>
 </div>
 
 <script src="assets/javascript/jimp.min.js" charset="utf-8"></script>
 <script src="assets/javascript/app.min.js" charset="utf-8"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>

@@ -45,9 +45,20 @@ dropArea.addEventListener('drop', handleDrop, false);
 outputTextarea.addEventListener('click', copyText, false);
 
 function copyText() {
-    outputTextarea.select();
-    document.execCommand('Copy');
-    document.querySelector('#bfm-button').classList.remove('hidden');
+    if (document.selection) {
+        var range = document.body.createTextRange();
+        range.moveToElementText('output');
+        range.select().createTextRange();
+        document.execCommand("copy");
+
+    } else if (window.getSelection) {
+        var range = document.createRange();
+         range.selectNode(document.getElementById('output'));
+         window.getSelection().addRange(range);
+         document.execCommand("copy");
+    }
+
+    document.querySelector('.output-container').classList.add('active');
 }
 
 function preventDefaults (e) {
@@ -56,11 +67,12 @@ function preventDefaults (e) {
 }
 
 function highlight(e) {
-    dropArea.classList.add('highlight');
+    console.log("yeas");
+    dropArea.classList.add('active');
 }
 
 function unhighlight(e) {
-    dropArea.classList.remove('highlight');
+    dropArea.classList.remove('active');
 }
 
 function handleDrop(e) {
@@ -86,8 +98,10 @@ function convertFile(file) {
             // If output is undefined, an error was thrown. Handled by console override
             if (typeof output === 'undefined') return false;
 
+            dropArea.classList.add('active');
             document.querySelector('#output-display').classList.remove('hidden');
             outputTextarea.innerHTML = output;
+            hljs.highlightBlock(outputTextarea);
         });
     }
 }
@@ -107,6 +121,7 @@ function resetLogDisplay() {
         log.removeChild(log.firstChild);
     }
 }
+
 // Exposing on window due to some browserify scoping fuckery
 window.copyText = copyText;
 window.handleFiles = handleFiles;
