@@ -15,5 +15,12 @@
     "primer-markdown": "^3.5.0",
     "primer-support": "^4.2.0",
     "primer-utilities": "^4.5.0"
+  },
+  "devDependencies": {
+    "buffer": "^5.1.0",
+    "px2bfm": "^1.0.2"
+  },
+  "scripts": {
+      "build": "browserify ./assets/javascript/app.js | uglifyjs -o ./assets/javascript/app.min.js"
   }
 }

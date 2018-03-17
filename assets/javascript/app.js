@@ -1,7 +1,7 @@
 'use strict';
 
 window.Buffer = require('buffer');
-const px2bfm = require('../../lib/px2bfm.js');
+const px2bfm = require('px2bfm');
 
 // Drag and Drop code based off Smashing Magazine
 // https://www.smashingmagazine.com/2018/01/drag-drop-file-uploader-vanilla-js/
@@ -47,7 +47,6 @@ outputTextarea.addEventListener('click', copyText, false);
 function copyText() {
     outputTextarea.select();
     document.execCommand('Copy');
-    document.querySelector('#output-display img').src = 'media/header_copied.png';
     document.querySelector('#bfm-button').classList.remove('hidden');
 }
 
