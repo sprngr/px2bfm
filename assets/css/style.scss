@@ -1,0 +1,101 @@
+---
+---
+
+@import "jekyll-theme-primer";
+
+@font-face {
+    font-family: '2am Spronget';
+    font-style: normal;
+    font-weight: 500;
+    src: url(../media/2amspronget.woff);
+}
+h2, button, .button {
+    font-family: '2am Spronget';
+    font-size: 16px;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+}
+img {
+    image-rendering: pixelated;
+}
+p {
+    margin-top: 0;
+}
+#bfm-button {
+    margin-top: 20px;
+    .button {
+        width: 100%;
+    }
+}
+#drop-area {
+    border-image: url(../media/border.png) 16 fill repeat;
+    border-image-outset: 4px;
+    border-image-width: 16px;
+    margin: 0 auto 20px;
+    padding: 20px;
+    text-align: center;
+
+    .highlight {
+        border-image: url(../media/border_highlight.png) 16 fill repeat;
+        border-image-outset: 4px;
+        border-image-width: 16px;
+    }
+}
+.button {
+    border-image: url(../media/btn_border.png) 16 fill repeat;
+    border-image-outset: 4px;
+    border-image-width: 16px;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+
+    > img {
+        background: none;
+    }
+}
+button.button {
+    padding: 5px;
+    margin-left: 10px;
+}
+.hidden {
+    display:none;
+}
+#preview {
+    margin: 10px auto;
+    text-align: center;
+}
+#preview img {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 416px;
+}
+#fileElem {
+    display: none;
+}
+#text-form {
+    margin-bottom: 20px;
+    padding: 10px 0;
+}
+#text-form input {
+    border: 1px solid #222034;
+    border-radius: 4px;
+    padding: 10px 5px;
+}
+#output {
+    border: 1px solid #222034;
+    border-radius: 4px;
+    display: block;
+    height: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    resize: none;
+    width: 480px;
+}
+.upload {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+}

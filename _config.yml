@@ -1,0 +1,20 @@
+exclude:
+  - node_modules
+  - script
+
+sass:
+  style: :compressed
+
+github:
+  private: false
+  license:
+    name: MIT
+  source:
+    branch: "gh-pages"
+    path: "/"
+  repository_url: "https://github.com/sprngr/px2bfm"
+
+title: px2bfm
+description: Parse pixels to BitFontMaker2 JSON font format 
+
+google_analytics: UA-115550011-1

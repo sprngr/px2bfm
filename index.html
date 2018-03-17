@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<h2>Font Configuration Options</h2>
+<div id="text-form">
+    <p>You may set some configuration options now or after it's imported later in BitFontMaker2.</p>
+    <input id="font-name" placeholder="Font Name (Optional)">
+    <input id="font-creator" placeholder="Creator Name (Optional)">
+    <button type="button" class="button" onclick="window.location.reload(true)">Reset</button>
+</div>
+<h2>Upload Sprite Sheet</h2>
+<div id="drop-area">
+    <form class="drop-form">
+        <input type="file" id="fileElem" accept="image/*" onchange="handleFiles(this.files)">
+        <label class="upload" for="fileElem">
+            <img src="assets/media/upload.png"/>
+        </label>
+    </form>
+</div>
+<div id="error-display" class="hidden">
+</div>
+<div id="output-display" class="hidden">
+    <h2>Copy JSON</h2>
+    <textarea id="output"></textarea>
+</div>
+
+<div id="bfm-button" class="hidden">
+    <a class="button" href="http://www.pentacom.jp/pentacom/bitfontmaker2/">Import JSON into BitFontMaker</a>
+</div>
+
+<script src="assets/javascript/jimp.min.js" charset="utf-8"></script>
+<script src="assets/javascript/app.min.js" charset="utf-8"></script>

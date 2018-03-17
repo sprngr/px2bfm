@@ -1,33 +1,19 @@
 {
-  "name": "px2bfm",
-  "version": "1.0.2",
-  "description": "Parse pixels to BitFontMaker2 JSON font format",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sprngr/px2bfm.git"
+  "name": "px2bfm-gh-pages",
+  "version": "0.1.0",
+  "description": "A Jekyll site built on GitHub's Primer styles",
+  "main": "index.html",
+  "scripts": {
+    "test": "script/cibuild"
   },
-  "bin": {
-    "px2bfm": "./bin/px2bfm"
-  },
-  "main": "./lib/px2bfm.js",
-  "keywords": [
-    "pixel",
-    "font"
-  ],
-  "author": "sprngr",
+  "author": "Ben Balter",
   "license": "MIT",
   "dependencies": {
-    "commander": "^2.15.0",
-    "jimp": "^0.2.28"
-  },
-  "scripts": {
-    "start": "node ./bin/px2bfm",
-    "test": "ava",
-    "build-docs": "browserify ./docs/js/app.js | uglifyjs -o ./docs/js/app.min.js",
-    "watch-docs": "watchify ./docs/js/app.js -o 'uglifyjs -o ./docs/js/app.min.js'"
-  },
-  "devDependencies": {
-    "ava": "^1.0.0-beta.3",
-    "buffer": "^5.1.0"
+    "anchor-js": "^4.0.0",
+    "primer-base": "^1.3.0",
+    "primer-layout": "^1.2.0",
+    "primer-markdown": "^3.5.0",
+    "primer-support": "^4.2.0",
+    "primer-utilities": "^4.5.0"
   }
 }
