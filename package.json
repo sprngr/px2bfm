@@ -6,7 +6,8 @@
     "scripts": {
         "test": "script/cibuild",
         "build:js": "browserify ./assets/javascript/app.js | uglifyjs -o ./assets/javascript/app.min.js",
-        "watch:js": "watchify ./assets/javascript/app.js -o 'uglifyjs > ./assets/javascript/app.min.js'"
+        "watch:js": "watchify ./assets/javascript/app.js -o 'uglifyjs > ./assets/javascript/app.min.js'",
+        "jekyll": "bundle exec jekyll serve"
     },
     "author": "Ben Balter (original), modified by sprngr",
     "license": "MIT",

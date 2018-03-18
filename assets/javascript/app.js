@@ -7,9 +7,10 @@ const px2bfm = require('px2bfm');
 // https://www.smashingmagazine.com/2018/01/drag-drop-file-uploader-vanilla-js/
 let dropArea = document.querySelector('#drop-area');
 let outputTextarea = document.querySelector('#output');
+let outputRaw = document.querySelector('#output-raw');
 let fontNameInput = document.querySelector('#font-name');
 let fontCreatorInput = document.querySelector('#font-creator');
-let log = document.querySelector('#error-display'); //.classList.remove('hidden')
+let log = document.querySelector('#error-display');
 
 // Override console.error to let it bubble up properly
 ['error'].forEach((verb) => {
@@ -45,19 +46,10 @@ dropArea.addEventListener('drop', handleDrop, false);
 outputTextarea.addEventListener('click', copyText, false);
 
 function copyText() {
-    if (document.selection) {
-        var range = document.body.createTextRange();
-        range.moveToElementText('output');
-        range.select().createTextRange();
-        document.execCommand("copy");
+    if (outputRaw.innerHTML === "") return;
 
-    } else if (window.getSelection) {
-        var range = document.createRange();
-         range.selectNode(document.getElementById('output'));
-         window.getSelection().addRange(range);
-         document.execCommand("copy");
-    }
-
+    outputRaw.select();
+    document.execCommand("copy");
     document.querySelector('.output-container').classList.add('active');
 }
 
@@ -67,7 +59,6 @@ function preventDefaults (e) {
 }
 
 function highlight(e) {
-    console.log("yeas");
     dropArea.classList.add('active');
 }
 
@@ -100,6 +91,7 @@ function convertFile(file) {
 
             dropArea.classList.add('active');
             document.querySelector('#output-display').classList.remove('hidden');
+            outputRaw.innerHTML = output;
             outputTextarea.innerHTML = output;
             hljs.highlightBlock(outputTextarea);
         });

@@ -71,6 +71,10 @@ $%&'()*+,-./:
 Extended character support is planned for the future, as well as the additional 90 character slots allowed.
 
 ### Template Downloads
+The template provided comes with guidelines to display both the boundaries of the sprites as well as the baseline for the glyphs themselves.
+
+![](assets/media/template.png)
+
 - [.ase (Aseprite) format](https://github.com/sprngr/px2bfm/blob/master/templates/template.ase?raw=true)
 - [.png format](https://github.com/sprngr/px2bfm/blob/master/templates/template.png?raw=true)
 
