@@ -1,5 +1,7 @@
 <h1 align="center">
-	<img src="logo.png" alt="px2bfm">
+	<a href="https://sprngr.github.io/px2bfm/" target="_blank" alt="Go to Web App">
+        <img src="logo.png" alt="px2bfm">
+    </a>
 </h1>
 
 > Parse pixels to [BitFontMaker2](http://www.pentacom.jp/pentacom/bitfontmaker2/) JSON font format
