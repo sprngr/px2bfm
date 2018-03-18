@@ -9,7 +9,7 @@
 [![npm](https://img.shields.io/npm/v/px2bfm.svg?style=for-the-badge)](https://www.npmjs.com/package/px2bfm)
 ![From Pittsburgh With Love](https://img.shields.io/badge/from%20pittsburgh%20with-%E2%9D%A4-yellow.svg?style=for-the-badge)
 
-Pixels 2 [BitFontMaker2](http://www.pentacom.jp/pentacom/bitfontmaker2/) (aka px2bfm) is a simple command line tool with the intention of
+Pixels 2 [BitFontMaker2](http://www.pentacom.jp/pentacom/bitfontmaker2/) (aka px2bfm) is a simple command line tool (& [web app](https://sprngr.github.io/px2bfm/))with the intention of
 allowing you to use your desired pixel editor to draw font glyphs, creating compatible BitFontMaker2 JSON, and allowing you to import it to generate a new bitmap font. This doesn't replace the app, just supports it.
 
 # Table of Contents
@@ -24,9 +24,7 @@ allowing you to use your desired pixel editor to draw font glyphs, creating comp
 - [Download Template](#download-template)
 - [License](#license)
 
-# Web App
-
-In the spirit of ease of use, this tool is available as a web app with a simple upload interface: [https://sprngr.github.io/px2bfm/](https://sprngr.github.io/px2bfm/)
+# [Web App](https://sprngr.github.io/px2bfm/)
 
 It runs exactly the same library on npm, just packaged up neatly within a GitHub hosted site. The only requirements here are to have compatible sprite sheets, template downloads
 and other important usage information can be found below in this README.

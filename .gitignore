@@ -1,3 +1,7 @@
 npm-debug.log
+_site
 node_modules
 output
+.gitignore
+.DS_Store
+Gemfile.lock

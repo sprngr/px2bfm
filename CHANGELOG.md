@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 ### Added
 - Fix for broken test
+- Decoupled GitHub page to a separate branch
 
 ## [1.0.2] - 2018-03-13
 ### Added
