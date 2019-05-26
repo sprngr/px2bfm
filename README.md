@@ -14,7 +14,7 @@
 Pixels 2 [BitFontMaker2](http://www.pentacom.jp/pentacom/bitfontmaker2/) (aka px2bfm) is a simple command line tool (& [web app](https://sprngr.github.io/px2bfm/)) with the intention of
 allowing you to use your desired pixel editor to draw font glyphs, creating compatible BitFontMaker2 JSON, and allowing you to import it to generate a new bitmap font. This doesn't replace the app, just supports it.
 
-# Table of Contents
+## Table of Contents
 
 - [Web App](#web-app)
 - [Installation](#installation)
