@@ -7,9 +7,9 @@
 > Parse pixels to [BitFontMaker2](http://www.pentacom.jp/pentacom/bitfontmaker2/) JSON font format
 
 
-[![Travis](https://img.shields.io/travis/sprngr/px2bfm.svg?style=for-the-badge)](https://travis-ci.org/sprngr/px2bfm)
-[![npm](https://img.shields.io/npm/v/px2bfm.svg?style=for-the-badge)](https://www.npmjs.com/package/px2bfm)
-![From Pittsburgh With Love](https://img.shields.io/badge/from%20pittsburgh%20with-%E2%9D%A4-yellow.svg?style=for-the-badge)
+[![Travis](https://img.shields.io/travis/sprngr/px2bfm.svg)](https://travis-ci.org/sprngr/px2bfm)
+[![npm](https://img.shields.io/npm/v/px2bfm.svg)](https://www.npmjs.com/package/px2bfm)
+![From Pittsburgh With Love](https://img.shields.io/badge/from%20pittsburgh%20with-%E2%9D%A4-yellow.svg)
 
 Pixels 2 [BitFontMaker2](http://www.pentacom.jp/pentacom/bitfontmaker2/) (aka px2bfm) is a simple command line tool (& [web app](https://sprngr.github.io/px2bfm/)) with the intention of
 allowing you to use your desired pixel editor to draw font glyphs, creating compatible BitFontMaker2 JSON, and allowing you to import it to generate a new bitmap font. This doesn't replace the app, just supports it.
@@ -26,26 +26,26 @@ allowing you to use your desired pixel editor to draw font glyphs, creating comp
 - [Download Template](#download-template)
 - [License](#license)
 
-# [Web App](https://sprngr.github.io/px2bfm/)
+## [Web App](https://sprngr.github.io/px2bfm/)
 
 It runs exactly the same library on npm, just packaged up neatly within a GitHub hosted site. The only requirements here are to have compatible sprite sheets, template downloads
 and other important usage information can be found below in this README.
 
-# Installation
+## Installation
 > This package requires npm and node.js. If you don't have npm or node.js on your local machine, check out [this guide on getting setup](https://docs.npmjs.com/getting-started/installing-node).
 
 ```console
 $ npm install --global px2bfm
 ```
 
-## Alternative Installation
+### Alternative Installation
 
 If you don't feel like installing it globally via npm, you can clone this repo and run the script directly:
 ```console
 $ ./bin/px2bfm
 ```
 
-# Usage
+## Usage
 ```console
 $ px2bfm --help
 
@@ -94,7 +94,7 @@ $ px2bfm yourFileHere.png | clip
 $ px2bfm yourFileHere.png | xclip
 ```
 
-## Important Notes
+### Important Notes
 
 Using one of the font templates provided (or your own, as long as it fits within required dimensions), create a pixel font.
 
@@ -105,7 +105,7 @@ Be sure to use black (hex #000000 / rgba 0, 0, 0) for glyph pixels, the image pa
 
 Each glyph must fit within a 16x16 pixel block, this is required by the web app.
 
-## Example Sprite Sheet & Output
+### Example Sprite Sheet & Output
 
 > Input
 
@@ -130,7 +130,7 @@ Each glyph must fit within a 16x16 pixel block, this is required by the web app.
 }
 ```
 
-# Character Support
+## Character Support
 Currently this supports the first set of 104 characters on BitFontMaker2:
 ```
 # Set 1
@@ -145,16 +145,16 @@ $%&'()*+,-./:
 ```
 Extended character support is planned for the future, as well as the additional 90 character slots allowed.
 
-# Download Template
+## Download Template
 Font template includes guides. The blue dotted line creates the grid of 16x16 blocks, the red lines are the baseline like in the web app.
 
 <img src="templates/template.png"/>
 
-## Downloads
+### Downloads
 * [.ase (Aseprite) format](https://github.com/sprngr/px2bfm/blob/master/templates/template.ase?raw=true)
 * [.png format](https://github.com/sprngr/px2bfm/blob/master/templates/template.png?raw=true)
 
-# License
+## License
 MIT &copy; [Michael Springer](https://github.com/sprngr) 2018
 
 BitFontMaker2 is the property of Pentacom.
